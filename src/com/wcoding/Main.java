@@ -28,16 +28,16 @@ public class Main {
         int numberOfPayments = years * MONTHS_IN_YEAR;
 
         //calculate mortgage
-        float top = (float)Math.pow(1+annual_interest_rate,  numberOfPayments);
-        top = top* annual_interest_rate;
-        double bottom = Math.pow(annual_interest_rate+1,numberOfPayments) - 1 ;
+        double top = (float)Math.pow(1+monthlyInterest,  numberOfPayments);
+        top = top* monthlyInterest;
+        double bottom = Math.pow(monthlyInterest+1,numberOfPayments) - 1 ;
 
         double mortgage = principal * (top/bottom);
+        System.out.println(mortgage);
 
         //convert to the currency format
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        String result =  currency.format(mortgage);
+       String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
 
-        System.out.println("Mortgage: " + result);
+       System.out.println(mortgageFormatted);
     }
 }
