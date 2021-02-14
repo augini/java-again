@@ -1,13 +1,13 @@
 package com.wcoding;
 
-public abstract class UIControl {
+public class UIControl {
     private boolean isEnabled = true;
 
     public UIControl(boolean isEnabled) {
         this.isEnabled = isEnabled;
     }
 
-    public abstract void render();
+//    public abstract void render();
 
     public void enable () {
         isEnabled = true;
