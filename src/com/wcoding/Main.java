@@ -3,19 +3,31 @@ package com.wcoding;
 import com.wcoding.exceptions.Account;
 import com.wcoding.exceptions.ExceptionsDemo;
 import com.wcoding.exceptions.InsufficientFundsException;
+import com.wcoding.generics.GenericList;
+import com.wcoding.generics.User;
+import com.wcoding.generics.Utils;
 
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        ExceptionsDemo.show();
-        Account account = new Account();
+//        GenericList<Integer> list =  new GenericList<>();
+//        list.add(12);
+        User user1 = new User(10);
+        User user2 = new User(20);
+        System.out.println(user1.compareTo(user2));
 
-        try {
-            account.withdraw(10);
-        } catch (InsufficientFundsException e) {
-            System.out.println(e.getMessage());
-        }
+        System.out.println(Utils.max(new User(12),new User(15)));
+        Utils.print("University", "Home");
+
+//        ExceptionsDemo.show();
+//        Account account = new Account();
+//
+//        try {
+//            account.withdraw(10);
+//        } catch (InsufficientFundsException e) {
+//            System.out.println(e.getMessage());
+//        }
 
 //      TextBox textBox = new TextBox(true, "Hello");
 //
