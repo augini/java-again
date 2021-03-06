@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class StreamsDemo {
-    private static List<Movie> movies = List.of(
+    private static List<Movie> movies = Arrays.asList(
             new Movie("Street Kings", 10),
             new Movie("Lion King",10),
             new Movie("Peaceful Warrior", 31),
@@ -72,9 +72,9 @@ public class StreamsDemo {
                 .skip(1)
                 .forEach(m -> System.out.println(m.getName()));
 
-        movies.stream()
-                .dropWhile(m -> m.getLikes() < 30)
-                .forEach(m -> System.out.println(m.getName()));
+//        movies.stream()
+//                .dropWhile(m -> m.getLikes() < 30)
+//                .forEach(m -> System.out.println(m.getName()));
 
     }
 

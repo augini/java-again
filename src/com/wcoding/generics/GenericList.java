@@ -1,8 +1,6 @@
 package com.wcoding.generics;
 
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public class GenericList<T> implements Iterable<T> {
     private T[] items = (T[])new Object[10];
@@ -16,15 +14,10 @@ public class GenericList<T> implements Iterable<T> {
         return items[index];
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return new ListIterator(this);
-    }
-
     private class ListIterator implements Iterator<T> {
+
         private GenericList<T> list;
         private int index;
-
         public ListIterator(GenericList<T> list) {
             this.list = list;
         }
@@ -38,5 +31,11 @@ public class GenericList<T> implements Iterable<T> {
         public T next() {
             return list.items[index++];
         }
+
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator(this);
     }
 }

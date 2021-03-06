@@ -8,11 +8,12 @@ public class Account {
         if(value <= 0) {
             throw new IOException();
         }
+        balance += value;
     }
 
-    public void withdraw (float value) throws InsufficientFundsException {
+    public void withdraw (float value) throws AccountException {
         if(value > balance){
-            throw new InsufficientFundsException();
+            throw new AccountException(new InsufficientFundsException());
         }
     }
 }

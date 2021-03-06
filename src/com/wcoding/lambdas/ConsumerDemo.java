@@ -1,12 +1,13 @@
 package com.wcoding.lambdas;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
 public class ConsumerDemo {
     public static void show(){
-        List<Integer> list = List.of(1,2,3);
+        List<Integer> list = Arrays.asList(1,2,3);
 
         // Imperative programming (for, if/else, switch/case)
         // We declare how things need to be done
@@ -30,7 +31,7 @@ public class ConsumerDemo {
 
     //Chaining consumer interface
     public static void ConsumerChain(){
-        List<String> letters = List.of("a", "b", "c", "d");
+        List<String> letters = Arrays.asList("a", "b", "c", "d");
 
         Consumer<String> print = (letter) -> System.out.println(letter);
         Consumer<String> printUppercase = (letter) -> System.out.println(letter.toUpperCase());
